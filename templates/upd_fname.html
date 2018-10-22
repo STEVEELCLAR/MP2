@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            <fieldset class="form-group">
+                <legend class = "border-bottom mb-4">Update Student</legend>
+
+                <div class="form-group">
+                    {{form.fname.label(class="form-control-label") }}
+                    {{ form.fname(class="form-control form-control-lg") }}
+                </div>
+
+                <div class="form-group">
+                    {{form.newfname.label(class="form-control-label") }}
+                    {{ form.newfname(class="form-control form-control-lg") }}
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-infor") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
