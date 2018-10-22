@@ -16,7 +16,7 @@ app.config['SECRET_KEY'] = 'asdfged123qwkjasdasddqwqd4'
 
 
 #Add student
-@app.route("/add_student", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def add_student():
   form = addForm()
   if request.method == 'POST':
@@ -31,8 +31,10 @@ def add_student():
     val = (id, lname, fname, course, year, gender)
     mycursor.execute(sql, val)
     mydb.commit()
+
     flash('Operation Successfully Executed!')
-    return redirect(url_for('del_id'))
+    return redirect(url_for('view_user'))
+
   return render_template('add_student.html', form=form  )
 
 
@@ -48,6 +50,9 @@ def del_id():
     mycursor.execute(sql, adr)
     mydb.commit()
 
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
+
   return render_template('del_id.html', form=form)
 
 
@@ -62,6 +67,8 @@ def del_lname():
     adr = (lname, )
     mycursor.execute(sql, adr)
     mydb.commit()
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('del_lname.html', form=form)
 
@@ -76,6 +83,9 @@ def del_fname():
     adr = (fname, )
     mycursor.execute(sql, adr)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('del_fname.html', form=form)
 
@@ -92,6 +102,9 @@ def del_course():
     mycursor.execute(sql, adr)
     mydb.commit()
 
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
+
   return render_template('del_course.html', form=form)
 
 
@@ -106,6 +119,9 @@ def del_year():
     adr = (year, )
     mycursor.execute(sql, adr)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('del_year.html', form=form)
 
@@ -122,6 +138,9 @@ def del_gender():
     mycursor.execute(sql, adr)
     mydb.commit()
 
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
+
   return render_template('del_gender.html', form=form)
 
   #update student by id
@@ -136,6 +155,9 @@ def upd_id():
     val = (newid, id)
     mycursor.execute(sql, val)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('upd_id.html', form=form)
 
@@ -153,6 +175,9 @@ def upd_lname():
     mycursor.execute(sql, val)
     mydb.commit()
 
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
+
   return render_template('upd_lname.html', form=form)
 
 #delete student by first name
@@ -167,6 +192,9 @@ def upd_fname():
     val = (newfname, fname)
     mycursor.execute(sql, val)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('upd_fname.html', form=form)
 
@@ -184,6 +212,9 @@ def upd_course():
     mycursor.execute(sql, val)
     mydb.commit()
 
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
+
   return render_template('upd_course.html', form=form)
 
 
@@ -199,6 +230,9 @@ def upd_year():
     val = (newyear, year)
     mycursor.execute(sql, val)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('upd_year.html', form=form)
 
@@ -216,6 +250,9 @@ def upd_gender():
     val = (newgender, gender)
     mycursor.execute(sql, val)
     mydb.commit()
+
+    flash('Operation Successfully Executed!')
+    return redirect(url_for('view_user'))
 
   return render_template('upd_gender.html', form=form)
 

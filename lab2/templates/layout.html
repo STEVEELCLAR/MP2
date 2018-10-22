@@ -40,9 +40,9 @@ body {
         <title>Student List</title>
     {% endif %}
 </head>
-<body style=" background-image: url("imagecsc1.jpg");">
+<body>
   <div class="header">
-    <a href="#default" class="logo">Student List</a>
+    <a href="{{ url_for('view_user') }}" class="logo">Student List</a>
     </div>
 
    <main role="main" class="container">
@@ -75,7 +75,7 @@ body {
                 <li class="list-group-item list-group-item-light"><a class="ml-2" href="{{ url_for('upd_course') }}">Update Student through Course</a></li>
                 <li class="list-group-item list-group-item-light"><a class="ml-2" href="{{ url_for('upd_year') }}">Update Student through Year</a></li>
                 <li class="list-group-item list-group-item-light"><a class="ml-2" href="{{ url_for('upd_gender') }}">Update Student through Gender</a></li>
-                <li class="list-group-item list-group-item-light">View Student</li>
+                <li class="list-group-item list-group-item-light"><a class="ml-2" href="{{ url_for('view_user') }}">View Student</li>
               </ul>
             </p>
           </div>
